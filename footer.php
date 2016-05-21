@@ -14,12 +14,36 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="footer-row">
+					<?php
+						if ( is_active_sidebar( 'footer' ) ) {
+							dynamic_sidebar( 'footer' );
+						}
+					?>
+				</div>
+			</div>
+		</div>
+
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'techfind' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'techfind' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'techfind' ), 'techfind', '<a href="https://wpstash.com" rel="designer">WPStash</a>' ); ?>
+			<div class="container">
+
+				<div class="website-copyright">
+					<p><?php printf( esc_html__( 'All Site Contents &copy; Copyright 2016 %1$s WordPress. All Rights Reserved. Powered by %2$s.', 'techfind' ), get_bloginfo( 'name' ) ,'WordPress' ); ?>
+					<p><?php echo esc_html( 'WordPress is web software you can use to create a beautiful website or blog.', 'techfind' ) ?></p>
+				</div>
+
+				<div class="site-copyright">
+					<p>
+						<?php printf( esc_html__( 'Theme by %2$s.', 'techfind' ), 'techfind', '<a href="https://wpstash.com" rel="designer">WPStash</a>' ); ?>
+					</p>
+				</div>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

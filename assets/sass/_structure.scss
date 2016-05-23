@@ -311,16 +311,16 @@
     clear: both;
     .main-posts-left {
         float: left;
-        width: 70%;
-        @include media-breakpoint-down(md) {
-            width: 100%;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            width: 70%;
         }
     }
     .main-posts-right {
         float: right;
         width: 30%;
         padding-left: 20px;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-between(xs, sm) {
             display: none;
         }
     }
@@ -417,7 +417,7 @@
         float: left;
         width: 100%;
         margin-bottom: 20px;
-        padding: 0 20px;
+        padding: 0;
         a {
             color: #888;
             &:hover {
@@ -436,6 +436,7 @@
         }
         @include media-breakpoint-up(lg) {
             width: 18.5%;
+            padding: 0 20px;
         }
         .widget-title {
             font-size: 15px;

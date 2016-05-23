@@ -8,7 +8,7 @@
     padding: 0 20px;
     clear: both;
     @include media-breakpoint-down(md) {
-        max-width: 600px;
+        max-width: 100%;
         padding: 0 20px;
     }
 }
@@ -415,7 +415,7 @@
     .widget {
         box-sizing: border-box;
         float: left;
-        width: 18.5%;
+        width: 100%;
         margin-bottom: 20px;
         padding: 0 20px;
         a {
@@ -431,9 +431,11 @@
             padding-bottom: 3px;
             text-align: left;
         }
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-up(sm) {
             width: 50%;
-            padding: 0;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 18.5%;
         }
         .widget-title {
             font-size: 15px;
@@ -473,7 +475,7 @@
             text-decoration: none;
             border-bottom: 1px dashed #eee;
         }
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             float: none;
             clear: both;
             text-align: center;

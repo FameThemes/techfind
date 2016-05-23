@@ -176,7 +176,7 @@ class Techfind_Listed_Post_Widget extends WP_Widget {
 
         <p>
 			<label for="<?php echo $this->get_field_id( 'block_category' ); ?>"><?php esc_html_e('Block Category:', 'techfind') ?></label>
-			<select class="widefat" multiple="multiple" name="<?php echo $this->get_field_name( 'block_category' );?>" id="<?php echo $this->get_field_id( 'block_category' );?>">
+			<select class="widefat" multiple="multiple" name="<?php echo $this->get_field_name( 'block_category' );?>[]" id="<?php echo $this->get_field_id( 'block_category' );?>">
 				<option value="0" <?php if ( ! $instance['block_category']) echo 'selected="selected"'; ?>><?php esc_html_e('All', 'techfind'); ?></option>
 				<?php foreach ( $list_categories as $category ) { ?>
 					<option value="<?php echo $category->term_id; ?>" <?php echo in_array( $category->term_id, $block_category ) ? 'selected="selected" ' : '';?>><?php echo $category->name . " (". $category->count . ")"; ?></option>

@@ -17,12 +17,12 @@ function techfind_customize_register( $wp_customize ) {
 
 	// Primary color setting
 	$wp_customize->add_setting( 'primary_color' , array(
-		'sanitize_callback'	=> 'glob_sanitize_hex_color',
+		'sanitize_callback'	=> 'techfind_sanitize_hex_color',
 		'default'     => '#c70909',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
-		'label'        => __( 'Primary Color', 'glob' ),
+		'label'        => __( 'Primary Color', 'techfind' ),
 		'section'    => 'colors',
 		'settings'   => 'primary_color',
 	) ) );
@@ -30,10 +30,10 @@ function techfind_customize_register( $wp_customize ) {
 	// Second color setting
 	$wp_customize->add_setting( 'secondary_color' , array(
 		'default'     => '#333',
-		'sanitize_callback'	=> 'glob_sanitize_hex_color',
+		'sanitize_callback'	=> 'techfind_sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-		'label'        => __( 'Secondary Color', 'glob' ),
+		'label'        => __( 'Secondary Color', 'techfind' ),
 		'section'    => 'colors',
 		'settings'   => 'secondary_color',
 	) ) );
@@ -53,10 +53,10 @@ add_action( 'customize_preview_init', 'techfind_customize_preview_js' );
 
 
 /*------------------------------------------------------------------------*/
-/*  Glob Sanitize Functions.
+/*  techfind Sanitize Functions.
 /*------------------------------------------------------------------------*/
 
-function glob_sanitize_file_url( $file_url ) {
+function techfind_sanitize_file_url( $file_url ) {
 	$output = '';
 	$filetype = wp_check_filetype( $file_url );
 	if ( $filetype["ext"] ) {
@@ -65,17 +65,17 @@ function glob_sanitize_file_url( $file_url ) {
 	return $output;
 }
 
-function glob_sanitize_number( $input ) {
+function techfind_sanitize_number( $input ) {
     return force_balance_tags( $input );
 }
 
-function glob_sanitize_select( $input, $setting ) {
+function techfind_sanitize_select( $input, $setting ) {
 	$input = sanitize_key( $input );
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
-function glob_sanitize_hex_color( $color ) {
+function techfind_sanitize_hex_color( $color ) {
 	if ( $color === '' ) {
 		return '';
 	}
@@ -84,15 +84,15 @@ function glob_sanitize_hex_color( $color ) {
 	}
 	return null;
 }
-function glob_sanitize_checkbox( $checked ) {
+function techfind_sanitize_checkbox( $checked ) {
     return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
-function glob_sanitize_text( $string ) {
+function techfind_sanitize_text( $string ) {
 	return wp_kses_post( balanceTags( $string ) );
 }
 
-function glob_sanitize_number_absint( $number, $setting ) {
+function techfind_sanitize_number_absint( $number, $setting ) {
 	// Ensure $number is an absolute integer (whole number, zero or greater).
 	$number = absint( $number );
 

@@ -1282,6 +1282,7 @@ a:hover, a:active {
 
 .widget-title a {
 	color: #c70909;
+	line-height: 1;
 }
 
 .widget_pages ul li,
@@ -1341,22 +1342,42 @@ a:hover, a:active {
 }
 
 .metro-box .metro-post.big {
-	width: 48.39%;
+	width: 100%;
 }
 
-@media (max-width: 991px) {
+.metro-box .metro-post.big img {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
 	.metro-box .metro-post.big {
 		width: 100%;
 	}
 }
 
-.metro-box .metro-post.small {
-	width: 25.75%;
+@media (min-width: 992px) {
+	.metro-box .metro-post.big {
+		width: 48.39%;
+	}
 }
 
-@media (max-width: 991px) {
+.metro-box .metro-post.small {
+	width: 100%;
+}
+
+.metro-box .metro-post.small img {
+	width: 100%;
+}
+
+@media (min-width: 544px) {
 	.metro-box .metro-post.small {
 		width: 50%;
+	}
+}
+
+@media (min-width: 992px) {
+	.metro-box .metro-post.small {
+		width: 25.75%;
 	}
 }
 
@@ -1457,7 +1478,6 @@ a:hover, a:active {
 
 .home-widget .widget-title {
 	border-color: #e9e9e9;
-	font-size: 24px;
 }
 
 .home-widget .widget-title a {
@@ -1485,6 +1505,12 @@ a:hover, a:active {
 
 .block-posts .featured-image img {
 	display: block;
+}
+
+@media (max-width: 991px) {
+	.block-posts .featured-image img {
+		width: 100%;
+	}
 }
 
 .block-posts .entry-title {
@@ -1644,7 +1670,7 @@ a:hover, a:active {
 
 @media (max-width: 991px) {
 	.container {
-		max-width: 600px;
+		max-width: 100%;
 		padding: 0 20px;
 	}
 }
@@ -2127,7 +2153,7 @@ a:hover, a:active {
 .footer-widgets .widget {
 	box-sizing: border-box;
 	float: left;
-	width: 18.5%;
+	width: 100%;
 	margin-bottom: 20px;
 	padding: 0 20px;
 }
@@ -2148,10 +2174,15 @@ a:hover, a:active {
 	text-align: left;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 544px) {
 	.footer-widgets .widget {
 		width: 50%;
-		padding: 0;
+	}
+}
+
+@media (min-width: 992px) {
+	.footer-widgets .widget {
+		width: 18.5%;
 	}
 }
 
@@ -2201,7 +2232,7 @@ a:hover, a:active {
 	border-bottom: 1px dashed #eee;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 	.site-info .site-copyright {
 		float: none;
 		clear: both;

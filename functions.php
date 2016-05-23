@@ -103,7 +103,7 @@ add_action( 'after_setup_theme', 'techfind_setup' );
  * @techfindal int $content_width
  */
 function techfind_content_width() {
-	$techfindALS['content_width'] = apply_filters( 'techfind_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'techfind_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'techfind_content_width', 0 );
 
@@ -119,8 +119,8 @@ function techfind_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'techfind' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(

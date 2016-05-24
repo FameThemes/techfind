@@ -32,7 +32,6 @@ a {
 	max-width: 80%;
 	font-weight: 600;
 	letter-spacing: 1;
-	background: $color__primary;
 	border: none;
 	@include media-breakpoint-down(md) {
 		display: none;

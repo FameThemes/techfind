@@ -241,12 +241,12 @@ function techfind_scripts() {
 				background-color: {$primary};
 				border-color : {$primary};
 			}
-			.menu-sticky { background-color: {$primary}; }
+			.menu-sticky, .top-bar { background-color: {$primary}; }
 			.widget-title { border-color : {$primary}; }
 			.widget-title, .widget-title a,
 			#respond h3#reply-title,
-			.secondary-navigation a:hover,
-			.secondary-navigation a:hover i { color : {$primary};}
+			.secondary-navigation ul li a:hover,
+			.secondary-navigation ul li a:hover i { color : {$primary};}
 
 
 			.main-navigation a:hover,

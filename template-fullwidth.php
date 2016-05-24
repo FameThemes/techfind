@@ -10,11 +10,10 @@
 get_header(); ?>
 
 <div class="container">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area no-sidebar">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		echo 'ths is main page';
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', 'page' );

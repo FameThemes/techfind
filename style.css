@@ -1912,6 +1912,10 @@ a:hover, a:active {
 	}
 }
 
+.content-area.no-sidebar {
+	width: 100%;
+}
+
 .sidebar {
 	float: right;
 	width: 25%;

@@ -404,6 +404,48 @@
             margin: 0;
         }
     }
+    .footer-posts {
+        background: #191919 ;
+        margin: 0;
+        overflow: hidden;
+        padding: 60px 0 25px;
+        width: 100%;
+        .footer_post_widget {
+            .hentry {
+                float: left;
+                margin: 0 0 25px;
+                padding: 0 15px;
+                width: 100%;
+                @include media-breakpoint-up(sm) {
+                    width: 50%;
+                }
+                @include media-breakpoint-up(md) {
+                    width: 33.33333%;
+                }
+                @include media-breakpoint-up(lg) {
+                    width: 20%;
+                }
+                .featured-image {
+                    margin-bottom: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .entry-title {
+                    font-size: 15px;
+                    margin: 0;
+                    text-align: center;
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer-widgets {

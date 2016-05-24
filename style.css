@@ -2170,6 +2170,62 @@ a:hover, a:active {
 	}
 }
 
+.site-footer .footer-posts {
+	background: #191919;
+	margin: 0;
+	overflow: hidden;
+	padding: 60px 0 25px;
+	width: 100%;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry {
+	float: left;
+	margin: 0 0 25px;
+	padding: 0 15px;
+	width: 100%;
+}
+
+@media (min-width: 544px) {
+	.site-footer .footer-posts .footer_post_widget .hentry {
+		width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	.site-footer .footer-posts .footer_post_widget .hentry {
+		width: 33.33333%;
+	}
+}
+
+@media (min-width: 900px) {
+	.site-footer .footer-posts .footer_post_widget .hentry {
+		width: 20%;
+	}
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .featured-image {
+	margin-bottom: 10px;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .featured-image img {
+	width: 100%;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .entry-title {
+	font-size: 15px;
+	margin: 0;
+	text-align: center;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .entry-title a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .entry-title a:hover {
+	text-decoration: underline;
+}
+
 .footer-widgets {
 	border-bottom: 1px solid #333;
 	background: #000;

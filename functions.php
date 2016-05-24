@@ -152,7 +152,17 @@ function techfind_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'techfind' ),
+		'name'          => esc_html__( 'Footer 1', 'techfind' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'techfind' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'techfind' ),
 		'id'            => 'footer',
 		'description'   => esc_html__( 'Add widgets here.', 'techfind' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -296,13 +306,9 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
  *  Widgets
  */
 require get_template_directory() . '/inc/widgets/metro_widget.php';
 require get_template_directory() . '/inc/widgets/recent_posts_widget.php';
 require get_template_directory() . '/inc/widgets/listed_post_widget.php';
+require get_template_directory() . '/inc/widgets/footer_posts_widget.php';

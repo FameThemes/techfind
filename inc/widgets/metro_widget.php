@@ -141,7 +141,7 @@ class Techfind_Metro_Widget_Block extends WP_Widget {
 		) );
         $instance['title']               = sanitize_text_field( $new_instance['title'] );
 		$instance['ignore_sticky']       = isset($new_instance['ignore_sticky']) && $new_instance['ignore_sticky'] ? 1 : 0;
-		$instance['block_category']      = isset( $new_instance['block_category'] ) ?  absint( $new_instance['block_category'] ) : '' ;
+		$instance['block_category'] 	 = isset( $new_instance['block_category'] ) ?  array_map( 'absint', ( array) $new_instance['block_category'] ) : false ;
 		$instance['number_posts']        = absint( $new_instance['number_posts'] );
         $instance['order'] 		         = sanitize_text_field( $new_instance['order'] );
 		$instance['orderby'] 		     = sanitize_text_field( $new_instance['orderby'] );
@@ -168,7 +168,7 @@ class Techfind_Metro_Widget_Block extends WP_Widget {
 			'orderby'             => 'date'
 		);
 		$instance        = wp_parse_args( (array) $instance, $defaults );
-		$block_category  = $instance['block_category'];
+		$block_category  = (array)$instance['block_category'];
         $list_categories = get_categories();
 		$order           = array( 'ASC', 'DESC' );
 		$orderby         = array('date', 'comment_count', 'rand');
@@ -179,10 +179,10 @@ class Techfind_Metro_Widget_Block extends WP_Widget {
 		</p>
         <p>
 			<label for="<?php echo $this->get_field_id( 'block_category' ); ?>"><?php esc_html_e('Block Category:', 'techfind') ?></label>
-			<select class="widefat" name="<?php echo $this->get_field_name( 'block_category' );?>" id="<?php echo $this->get_field_id( 'block_category' );?>">
+			<select class="widefat" multiple="multiple" name="<?php echo $this->get_field_name( 'block_category' );?>[]" id="<?php echo $this->get_field_id( 'block_category' );?>">
 				<option value="0" <?php if ( ! $instance['block_category']) echo 'selected="selected"'; ?>><?php esc_html_e('All', 'techfind'); ?></option>
 				<?php foreach ( $list_categories as $category ) { ?>
-					<option value="<?php echo $category->term_id; ?>" <?php echo ( $category->term_id == $block_category ) ? 'selected="selected" ' : '';?>><?php echo $category->name . " (". $category->count . ")"; ?></option>
+					<option value="<?php echo $category->term_id; ?>" <?php echo in_array( $category->term_id, $block_category ) ? 'selected="selected" ' : '';?>><?php echo $category->name . " (". $category->count . ")"; ?></option>
 				<?php } ?>
 			</select>
 		</p>

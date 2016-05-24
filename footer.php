@@ -14,6 +14,19 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<div class="footer-posts">
+			<div class="container">
+				<div class="footer-row">
+					<?php
+						if ( is_active_sidebar( 'footer-1' ) ) {
+							dynamic_sidebar( 'footer-1' );
+						}
+					?>
+				</div>
+			</div>
+		</div>
+
 		<div class="footer-widgets">
 			<div class="container">
 				<div class="footer-row">

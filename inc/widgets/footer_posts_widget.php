@@ -3,13 +3,13 @@
  * Block 1 - Metro Widget
  */
 // Register the widget
-add_action( 'widgets_init', create_function( '', 'return register_widget("Techfind_Recent_Posts_Widget");'));
+add_action( 'widgets_init', create_function( '', 'return register_widget("Techfind_Footer_Posts_Widget");'));
 // The widget class
-class Techfind_Recent_Posts_Widget extends WP_Widget {
+class Techfind_Footer_Posts_Widget extends WP_Widget {
 	public function __construct() {
-		$widget_ops = array('classname' => 'block1_widget', 'description' => esc_html__( "Display posts use on home 2 block.", 'techfind') );
-		parent::__construct('cs_block1', esc_html__('WPS Recent Posts', 'techfind'), $widget_ops);
-		$this->alt_option_name = 'widget_block1';
+		$widget_ops = array('classname' => 'footer_block1', 'description' => esc_html__( "Display posts use on footer 1.", 'techfind') );
+		parent::__construct('footer_block1', esc_html__('WPS Footer Posts', 'techfind'), $widget_ops);
+		$this->alt_option_name = 'widget_footer';
 		add_action( 'save_post', array($this, 'remove_cache') );
 		add_action( 'deleted_post', array($this, 'remove_cache') );
 		add_action( 'switch_theme', array($this, 'remove_cache') );
@@ -22,7 +22,7 @@ class Techfind_Recent_Posts_Widget extends WP_Widget {
 		//extract( $args );
 		$cache = array();
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_block1', 'widget' );
+			$cache = wp_cache_get( 'widget_footer', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -54,65 +54,32 @@ class Techfind_Recent_Posts_Widget extends WP_Widget {
 			'order'               => $order,
 			'orderby'             => $orderby,
 		);
-		$custom_query = new WP_Query( apply_filters( 'widget_block1_posts_args', $custom_query_args ) );
+		$custom_query = new WP_Query( apply_filters( 'widget_footer_posts_args', $custom_query_args ) );
         if ($custom_query->have_posts()) :?>
-		<?php $count = 0; ?>
 		<?php echo $args['before_widget']; ?>
 
-		<?php
-		if ( $title && $block_category == '' ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		} else {
-			if ( $block_category ) {
-				echo $args['before_title'];
-	            ?>
-	            <a href="<?php echo esc_url( get_category_link( $block_category ) ); ?>"><?php echo ! empty ( $title ) ? $title : esc_attr(get_cat_name( $block_category ) ); ?></a>
-	            <?php
-	            echo $args['after_title'];
-			}
-		}
-		?>
+		<div class="footer_post_widget">
+			<?php while ( $custom_query->have_posts() ) : $custom_query->the_post();  ?>
 
-		<div class="rencent_post_widget">
-			<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); $count++; ?>
-
-    			<?php
-    			if ( $count == 1 ) :
-        		?>
                     <!-- begin .hentry -->
-                    <article id="post-<?php the_ID(); ?>" <?php post_class('first'); ?> <?php echo $count; ?> >
-
-						<header class="entry-header">
-							<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-						</header>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('first'); ?>>
 
                         <?php if ( has_post_thumbnail() ) { ?>
                         <div class="featured-image">
-                            <?php if ( has_post_thumbnail() ) : ?><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'thumb-234x125' ); ?></a><?php endif; ?>
+                            <?php if ( has_post_thumbnail() ) : ?><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'thumb-210x140' ); ?></a><?php endif; ?>
                         </div>
                         <?php } ?>
 
+                        <header class="entry-header">
+							<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+						</header>
+
                     </article>
                     <!-- end .hentry -->
-                <?php
-					continue;
-    			endif;
-                ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-
-						<div class="entry-header">
-							<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-						</div>
-
-					</article><!-- #post-## -->
-
             <?php
 			endwhile; ?>
 
-
-
-
-		</div> <!-- .block2_widget_content -->
+		</div> <!-- .footer_widget_content -->
 
 		<?php echo $args['after_widget']; ?>
 		<?php
@@ -124,7 +91,7 @@ class Techfind_Recent_Posts_Widget extends WP_Widget {
 		<?php
 		if ( ! $this->is_preview() ) {
 			$cache[ $args['widget_id'] ] = ob_get_flush();
-			wp_cache_set( 'widget_block1', $cache, 'widget' );
+			wp_cache_set( 'widget_footer', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -160,7 +127,7 @@ class Techfind_Recent_Posts_Widget extends WP_Widget {
 	 * @access public
 	 */
 	public function remove_cache() {
-		wp_cache_delete('widget_block1', 'widget');
+		wp_cache_delete('widget_footer', 'widget');
 	}
 	/**
 	 * @param array $instance

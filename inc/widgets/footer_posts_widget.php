@@ -53,6 +53,7 @@ class Techfind_Footer_Posts_Widget extends WP_Widget {
 			'category__in'        => $block_category,
 			'order'               => $order,
 			'orderby'             => $orderby,
+			'meta_query' 		  => array(array('key' => '_thumbnail_id'))
 		);
 		$custom_query = new WP_Query( apply_filters( 'widget_footer_posts_args', $custom_query_args ) );
         if ($custom_query->have_posts()) :?>

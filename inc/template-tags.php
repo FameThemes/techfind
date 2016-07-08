@@ -227,3 +227,24 @@ function techfind_the_custom_logo() {
 	}
 }
 endif;
+
+
+if ( ! function_exists( 'techfind_footer_site_info' ) ) {
+
+    function techfind_footer_site_info()
+    {
+        ?>
+		<div class="website-copyright">
+			<p><?php printf( esc_html__( 'All Site Contents &copy; Copyright 2016 %1$s WordPress. All Rights Reserved. Powered by %2$s.', 'techfind' ), get_bloginfo( 'name' ) ,'WordPress' ); ?>
+			<p><?php echo esc_html( 'WordPress is web software you can use to create a beautiful website or blog.', 'techfind' ) ?></p>
+		</div>
+
+		<div class="site-copyright">
+	        <?php printf(esc_html__('Copyright %1$s %2$s %3$s', 'techfind'), '&copy;', esc_attr(date('Y')), esc_attr(get_bloginfo())); ?>
+	        <span class="sep"> &ndash; </span>
+	        <?php printf(esc_html__('%1$s theme by %2$s', 'techfind'), 'WordPress', '<a href="' . esc_url('https://wpstash.com', 'techfind') . '">WPStash</a>' ); ?>
+		</div>
+		<?php
+    }
+}
+add_action( 'techfind_footer_site_info', 'techfind_footer_site_info' );

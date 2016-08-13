@@ -530,13 +530,9 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
-	padding: 12px;
-}
-
+input[type="search"],
 textarea {
-	padding-left: 3px;
-	width: 100%;
+	padding: 12px;
 }
 
 form label {
@@ -2179,13 +2175,13 @@ a:hover, a:active {
 	background: #191919;
 	margin: 0;
 	overflow: hidden;
-	padding: 60px 0 25px;
+	padding: 40px 0;
 	width: 100%;
 }
 
 .site-footer .footer-posts .footer_post_widget .hentry {
 	float: left;
-	margin: 0 0 25px;
+	margin: 0;
 	padding: 0 15px;
 	width: 100%;
 }
@@ -2214,6 +2210,10 @@ a:hover, a:active {
 
 .site-footer .footer-posts .footer_post_widget .hentry .featured-image img {
 	width: 100%;
+}
+
+.site-footer .footer-posts .footer_post_widget .hentry .entry-header {
+	margin-bottom: 0;
 }
 
 .site-footer .footer-posts .footer_post_widget .hentry .entry-title {

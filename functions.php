@@ -184,12 +184,16 @@ function techfind_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
+	 * by Lato, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'techfind' ) ) {
 		$fonts[] = 'Lato:400,700';
 	}
 
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by Merriweather, translate this to 'off'. Do not translate into your own language.
+	 */
 	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'techfind' ) ) {
 		$fonts[] = 'Merriweather:400,700';
 	}

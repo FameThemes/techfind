@@ -26,7 +26,7 @@ function techfind_posted_on() {
 
 	$posted_on = sprintf(
 		esc_html_x( '%s', 'post date', 'techfind' ),
-		$time_string
+		'<span class="posted-on">' . $time_string . '</span>'
 	);
 
 	$byline = sprintf(
@@ -35,9 +35,9 @@ function techfind_posted_on() {
 	);
 
 	$categories_list = get_the_category_list( esc_html__( ', ', 'techfind' ) );
-	$posted_in = sprintf( esc_html__( '%1$s', 'techfind' ),  $categories_list);
+	$posted_in = sprintf( esc_html__( '%1$s', 'techfind' ), '<span class="posted-in">'. $categories_list . '</span>');
 
-	echo '<span class="posted-on">' . $posted_on . '</span> - <span class="posted-in">' . $posted_in . '</span>'; // WPCS: XSS OK.
+	echo $posted_on. ' - ' . $posted_in; // WPCS: XSS OK.
 
 }
 endif;

@@ -236,8 +236,8 @@ function techfind_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/font-awesome.min.css', array(), '4.5' );
 
 	wp_enqueue_style( 'techfind-style', get_stylesheet_uri() );
-	$primary   = get_theme_mod( 'primary_color', '#c70909' );
-	$secondary = get_theme_mod( 'secondary_color', '#333' );
+	$primary   = esc_attr( get_theme_mod( 'primary_color', '#c70909' ) );
+	$secondary = esc_attr( get_theme_mod( 'secondary_color', '#333' ) );
 	$custom_css = "
 			button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"],
 			.st-menu .btn-close-home .home-button,

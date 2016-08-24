@@ -22,7 +22,7 @@ function techfind_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
-		'label'        => __( 'Primary Color', 'techfind' ),
+		'label'        => esc_html__( 'Primary Color', 'techfind' ),
 		'section'    => 'colors',
 		'settings'   => 'primary_color',
 	) ) );
@@ -33,7 +33,7 @@ function techfind_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'techfind_sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-		'label'        => __( 'Secondary Color', 'techfind' ),
+		'label'        => esc_html__( 'Secondary Color', 'techfind' ),
 		'section'    => 'colors',
 		'settings'   => 'secondary_color',
 	) ) );

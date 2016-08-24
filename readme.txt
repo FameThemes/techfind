@@ -9,6 +9,9 @@ Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Techfind Theme, Copyright 2016 FameThemes
+Techfind is distributed under the terms of the GNU GPL
+
 A starter theme called Techfind, or underscores.
 
 == Description ==
@@ -36,3 +39,9 @@ Hi. I'm a starter theme called Techfind, or underscores, if you like. I'm a them
 * sidebarEffects, Licensed under the MIT license. https://gist.github.com/Braunson/6887262
 * classie, class helper functions from bonzo https://github.com/ded/bonzo
 * Sticky Plugin Copyright 2014 Anthony Garand http://garand.me
+* Image use in screenshot: https://www.pexels.com/photo/woman-smartphone-mobile-phone-laptop-29781/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/apple-technology-ipad-computer-38568/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/art-car-luxury-brand-4081/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/car-sports-car-steering-wheel-ferrari-16156/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/city-lights-night-bridge-89573/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image use in screenshot: https://www.pexels.com/photo/lights-photography-white-lighting-53265/. [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
